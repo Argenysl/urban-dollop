@@ -12,7 +12,7 @@ library(ggforce)
 library(data.table)
 library(curl)
 #'* THE FUNCTIONS ARE AT THE BOTTOM, PLEASE LOAD THEM BEFORE USING THEM!!!! *
-#I tried making this program or function very easy to do. There is three separate functions that serve a different function each
+#I tried making this program or function very easy to run. There is three separate functions that serve a different function each
 #technically, you can sightly modify what comes back from the get_raster() function and you actually
 #obtain the full raster image with that buffer, which is very convenient.
 
