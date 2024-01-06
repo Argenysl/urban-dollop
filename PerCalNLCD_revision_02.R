@@ -1,15 +1,15 @@
 #libraries
 #'*please install before using*
-library(sp)
-library(terra)
-library(raster)
-library(sf)
-library(FedData)
-library(hrbrthemes)
-library(tidyverse)
-library(units)
-library(ggforce)
-library(data.table)
+#library(sp)
+#library(terra)
+#library(raster)
+#library(sf)
+#library(FedData)
+#ibrary(hrbrthemes)
+#library(tidyverse)
+#library(units)
+#library(ggforce)
+#library(data.table)
 
 #'* THE FUNCTIONS ARE AT THE BOTTOM, PLEASE LOAD THEM BEFORE USING THEM!!!! *
 #I tried making this program or function very easy to do. There is three separate functions that serve a different function each
