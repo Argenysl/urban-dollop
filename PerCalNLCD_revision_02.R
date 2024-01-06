@@ -1,23 +1,24 @@
 #libraries
 #'*please install before using*
-#library(sp)
-#library(terra)
-#library(raster)
-#library(sf)
-#library(FedData)
-#ibrary(hrbrthemes)
-#library(tidyverse)
-#library(units)
-#library(ggforce)
-#library(data.table)
-
+library(sp)
+library(terra)
+library(raster)
+library(sf)
+library(FedData)
+library(hrbrthemes)
+library(tidyverse)
+library(units)
+library(ggforce)
+library(data.table)
+library(curl)
 #'* THE FUNCTIONS ARE AT THE BOTTOM, PLEASE LOAD THEM BEFORE USING THEM!!!! *
 #I tried making this program or function very easy to do. There is three separate functions that serve a different function each
 #technically, you can sightly modify what comes back from the get_raster() function and you actually
 #obtain the full raster image with that buffer, which is very convenient.
 
 #First you need to read the file where the data is located, of course
-data <- read.csv("C:/Users/Jorge A. Rivera/Lab/sites_2015_2022.csv") #location of coordinates
+
+data <- read.csv(curl("https://raw.githubusercontent.com/Argenysl/urban-dollop/main/Data/sites_2015_2022.csv")) #location of coordinates
 
 #I made the program work with the data in a specific way, it must go in the following order
 #"Name of the place", "Longitude", "Latitude"
