@@ -10,28 +10,33 @@ library(units)
 library(ggforce)
 library(data.table)
 
+#'* THE FUNCTIONS ARE AT THE BOTTOM, PLEASE LOAD THEM BEFORE USING THEM!!!! *
+#I tried making this program or function very easy to do. There is three separate functions that serve a different function each
+#technically, you can sightly modify what comes back from the get_raster() function and you actually
+#obtain the full raster image with that buffer, which is very convenient.
+
+#First you need to read the file where the data is located, of course
 data <- read.csv("C:/Users/Jorge A. Rivera/Lab/sites_2015_2022.csv") #location of coordinates
 
-#I am technically using both the online source for NLCD and the downloaded version
-#I am only using the downloaded version to find the correct projection format which might not be necessary
-#I might fix that in the future if this code is re utilized 
+#I made the program work with the data in a specific way, it must go in the following order
+#"Name of the place", "Longitude", "Latitude"
+
 data <- data[c(1,2,6,7)]
 class(data$Latitude) #make sure they're numeric
 class(data$Longitude)
 coords <- data[c(2,3,4)]
+#okay now we format the data
 coords <- coords[c("site", "Longitude" , "Latitude")]
 coords_x <- coords
 
+#the years of interest can be a list to do multiple years at the same time
 years_of_interest <- list(2001,2004,2006,2008,2011,2013,2016,2019,2021)
-years_of_interest[1]
+#now choose the buffer size
+buffer_size <- 1000 # 1000 meters = 1km
 
-data_2021 <- automatic_years(years_of_interest,coords_x,1000)
-data_2021$rfm
-class(data_2021)
-getwd()
+data_2021 <- automatic_years(years_of_interest,coords_x,buffer_size)
+
 fwrite(data_2021, file = "NLCDdataAllSitesAllyears.csv")
-getwd()
-
 
 
 
